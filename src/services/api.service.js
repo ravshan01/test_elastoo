@@ -3,7 +3,7 @@ import axios from 'axios'
 // const TimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const instance = axios.create({
   mode: 'no-cors',
-  baseURL: process.env.VUE_API_HOST,
+  baseURL: process.env.VUE_APP_API_HOST,
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
     // TimeZone
@@ -12,15 +12,15 @@ const instance = axios.create({
 instance.setToken = token => {}
 instance.removeToken = () => {}
 
-// instance.interceptors.request.use(
-//   config => {
-//     return config
-//   },
-//   error => {
-//     // Do something with request error
-//     return Promise.reject(error)
-//   }
-// )
+instance.interceptors.request.use(
+  config => {
+    return config
+  },
+  error => {
+    // Do something with request error
+    return Promise.reject(error)
+  }
+)
 
 instance.interceptors.response.use(
   res => {
