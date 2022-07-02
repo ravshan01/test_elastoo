@@ -56,7 +56,7 @@ export default {
   },
 
   watch: {
-    item: {
+    modelValue: {
       handler() {
         this.graphic = this.item ? { ...this.item } : new Graphic()
       },
