@@ -1,5 +1,7 @@
 # test_elastoo
 
+Create `.env.local` file by `.env.local.example` in root project directory
+
 ## Project setup
 ```
 yarn install
