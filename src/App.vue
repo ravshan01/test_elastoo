@@ -2,19 +2,33 @@
 el-container.app
   el-header.app-header
     .app-header__actions
-      el-button(type="primary" @click="createGraphic") Create Graphic
+      el-button(type="primary" @click="createGraphic") Create GraphicModel
 
   el-main
     router-view
-</template>
 
+  create-or-edit-graphic-modal(v-model="createModalIsOpen")
+</template>
 <style lang="sass" src="./App.sass"></style>
 
 <script>
+import CreateOrEditGraphicModal from '@/components/CreateOrEditGraphicModal'
+
 export default {
   name: 'App',
+  components: {
+    CreateOrEditGraphicModal,
+  },
+  data() {
+    return {
+      createModalIsOpen: true,
+    }
+  },
+
   methods: {
-    createGraphic() {},
+    createGraphic() {
+      this.createModalIsOpen = true
+    },
   },
 }
 </script>
