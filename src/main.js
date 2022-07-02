@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 
+import 'devextreme/dist/css/dx.dark.css'
+
 // TODO: так как тестовый проект - игнорирую большой вес бандла и импортирую сразу всё
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
