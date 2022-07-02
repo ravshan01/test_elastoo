@@ -1,4 +1,5 @@
-// TODO: есть проблема с автозаполнением и подсказками vuex модулей в ide. нужно подумать что можно сделать
+// TODO: есть проблема с автозаполнением и подсказками vuex модулей в ide.
+//  Изначально хотел создавать класс, но незнаю как себя поведёт vuex - нужно подумать что можно сделать
 
 /**
  * Создаёт vuex module для CRUD операций *
@@ -67,7 +68,6 @@ export default class VuexCrudModule {
         /**
          * @param { Object } payload
          * @param { boolean } payload.overwriteDataState
-         * @param { object }  payload.body
          */
         async getData({ state, commit }, payload) {
           // if (state.loading) return
