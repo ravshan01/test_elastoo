@@ -2,6 +2,7 @@
   <DxPieChart
     id="pie"
     class="pie-graphic"
+    :title="graphic.name"
     :data-source="graphic.data"
     palette="Bright"
     @point-click="pointClickHandler($event)"
