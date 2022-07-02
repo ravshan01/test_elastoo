@@ -16,6 +16,10 @@ export default class Graphic {
     },
   }
   static types = [Graphic.enum.types.line, Graphic.enum.types.pie]
+  static urlsByType = {
+    [Graphic.enum.types.line]: '92a0a266-0321-4ff5-9993-b394d03ceee2',
+    [Graphic.enum.types.pie]: '2699115b-8ced-40c3-8072-b7fa9faf6047',
+  }
 
   /**
    *
