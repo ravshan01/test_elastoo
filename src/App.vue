@@ -3,7 +3,6 @@ el-container.app
   el-header.app-header
     .app-header__actions
       el-button(type="primary" @click="createGraphic") Create GraphicModel
-
   el-main
     router-view
 
@@ -21,7 +20,7 @@ export default {
   },
   data() {
     return {
-      createModalIsOpen: true,
+      createModalIsOpen: false,
     }
   },
 
