@@ -1,6 +1,6 @@
 import apiService from '@/services/api.service.js'
 
-export default class GraphicModel {
+export default class Graphic {
   constructor(payload) {
     this.id = Math.random()
     this.name = payload.name
@@ -12,6 +12,6 @@ export default class GraphicModel {
 
   static async create({ name, type, url }) {
     const { data } = await apiService.get(url)
-    return new GraphicModel({ name, type, url, data })
+    return new Graphic({ name, type, url, data })
   }
 }
