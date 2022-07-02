@@ -4,11 +4,18 @@ export default class Graphic {
   constructor(payload) {
     this.id = Math.random()
     this.name = payload?.name || ''
-    this.type = payload?.type || 'line'
+    this.type = payload?.type || Graphic.enum.types.line
     this.url = payload?.url || null
     this.data = payload?.data || null
   }
-  static types = ['line', 'pie']
+
+  static enum = {
+    types: {
+      line: 'line',
+      pie: 'pie',
+    },
+  }
+  static types = [Graphic.enum.types.line, Graphic.enum.types.pie]
 
   /**
    *
