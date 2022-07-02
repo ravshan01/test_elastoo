@@ -19,8 +19,6 @@ el-dialog(
     el-input(placeholder="name" v-model="graphic.name")
     el-select(v-model="graphic.type")
       el-option(v-for="type in graphicTypes" :key="type" :label="type" :value="type")
-    el-select(v-model="graphic.url")
-      el-option(v-for="elem in graphicUrls" :key="elem.value" :label="elem.label" :value="elem.value")
 
   template(#footer)
     el-button(
@@ -55,25 +53,18 @@ export default {
     graphicTypes() {
       return Graphic.types
     },
-    // так как это тестовый проект и нет обработки, захардкодил)
-    graphicUrls() {
-      return [
-        {
-          label: 'Line',
-          value: '92a0a266-0321-4ff5-9993-b394d03ceee2',
-        },
-        {
-          label: 'Pie',
-          value: '2699115b-8ced-40c3-8072-b7fa9faf6047',
-        },
-      ]
-    },
   },
 
   watch: {
     item: {
       handler() {
         this.graphic = this.item ? { ...this.item } : new Graphic()
+      },
+      immediate: true,
+    },
+    'graphic.type': {
+      handler() {
+        this.graphic.url = Graphic.urlsByType[this.graphic.type]
       },
       immediate: true,
     },
