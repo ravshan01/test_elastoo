@@ -5,7 +5,7 @@ export default class Graphic {
     this.id = Math.random()
     this.name = payload?.name || ''
     this.type = payload?.type || Graphic.enum.types.line
-    this.url = payload?.url || null
+    this.url = payload?.url || Graphic.urlsByType[Graphic.enum.types.line]
     this.data = payload?.data || null
   }
 

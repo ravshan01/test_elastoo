@@ -64,7 +64,9 @@ export default {
     },
     'graphic.type': {
       handler() {
-        this.graphic.url = Graphic.urlsByType[this.graphic.type]
+        if (this.graphic.type) {
+          this.graphic.url = Graphic.urlsByType[this.graphic.type]
+        }
       },
       immediate: true,
     },
