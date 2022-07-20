@@ -1,6 +1,4 @@
 import Graphic from '@/models/Graphic.model'
-import VuexCrudModule from '@/models/VuexCrudModule'
+import CRUDVuexModel from '@/models/CRUD.vuex.model'
 
-export default VuexCrudModule.create({
-  _class: Graphic,
-})
+export default new CRUDVuexModel({ _class: Graphic })
